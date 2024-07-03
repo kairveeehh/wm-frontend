@@ -13,7 +13,7 @@ const App = () => {
 
   const fetchSlots = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/slots`);
+      const response = await axios.get(`https://wm-backend-6.onrender.com/api/slots`);
       setSlots(response.data);
       setLoading(false);
     } catch (err) {
@@ -24,7 +24,7 @@ const App = () => {
 
   const bookSlot = async (slotId) => {
     try {
-      await axios.post(`http://localhost:5000/api/slots/book`, {
+      await axios.post(`https://wm-backend-6.onrender.com/api/slots/book`, {
         slotId,
         userId: 'user1', // Simulating a logged-in user
       });
@@ -36,7 +36,7 @@ const App = () => {
 
   const cancelBooking = async (slotId) => {
     try {
-      await axios.post(`http://localhost:5000/api/slots/cancel`, {
+      await axios.post(`https://wm-backend-6.onrender.com/api/slots/cancel`, {
         slotId,
         userId: 'user1', // Simulating a logged-in user
       });
